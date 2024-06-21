@@ -1,6 +1,5 @@
 import json
 import streamlit as st
-from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain.vectorstores import FAISS
@@ -166,10 +165,10 @@ def main():
                 user_input(user_question)
         
         if "gemini_response" in st.session_state:
-            st.write("Gemini's Response: ", st.session_state["gemini_response"])
+            st.write("JoanAI's Response: ", st.session_state["gemini_response"])
 
             if st.session_state.get("show_recommendation", False):
-                recommend = st.radio("Do you want a recommendation based on Gemini's response?", ("Yes", "No"), key="recommend")
+                recommend = st.radio("Do you want a recommendation based on JoanAI's response?", ("Yes", "No"), key="recommend")
                 if recommend == "Yes":
                     recommendation_query = st.text_input("What would you like a recommendation for? ask like this 'where can I buy'", key="recommendation_query")
                     if st.button("Get Recommendation", key="get_recommendation_button"):
