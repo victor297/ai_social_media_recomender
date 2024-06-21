@@ -1,1 +1,1 @@
-portaudio
+python3-pyaudio
